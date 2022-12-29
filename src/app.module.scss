@@ -1,0 +1,7 @@
+.mainContainer {
+  min-height: 100vh;
+  >div:nth-child(2) {
+    height: 400px;
+    z-index: -1;
+  }
+}

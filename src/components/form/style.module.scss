@@ -1,0 +1,36 @@
+@use '../../sass/colors.scss';
+
+$button-color: black;
+$input-size: 2.8rem;
+$border-radius-size: 15px;
+$image: '../../assets/icon-arrow.svg';
+
+.formStyle {
+  > input {
+    border-style: none;
+    height: $input-size;
+    margin: 0;
+  }
+  > input:nth-child(1) {
+    border-radius: 15px 0 0 15px;
+    width: calc(88% - $input-size);
+    padding: {
+      left: 1rem;
+      right: 1rem;
+    }
+  }
+  > input:nth-child(2) {
+    width: $input-size;
+    background-color: $button-color;
+    border-top-right-radius: $border-radius-size;
+    border-bottom-right-radius: $border-radius-size;
+    position: relative;
+    background-image: url($image);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &:hover {
+      background-color: colors.$color-primary-01;
+    }
+  }
+}
