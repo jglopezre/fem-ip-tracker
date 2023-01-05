@@ -18,7 +18,7 @@ export const Form = ({sendData}) => {
   }
 
   return (
-    <form onSubmit={ onSubmitData } className={ formStyle }>
+    <form onSubmit={ onSubmitData } className={ formStyle } style={{marginBottom: '2rem'}}>
       <input type="text"
         name="ip-address"
         placeholder="IP Address"

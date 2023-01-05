@@ -14,7 +14,7 @@ export const InformationSection = () => {
   return (
     <div className={ mainContainer }>
       <h1>IP Address Tracker</h1>
-      <Form sendData={console.log} />
+      <Form sendData={ console.log } />
       <InformationTable data={data} />
     </div>
   )

@@ -1,8 +1,7 @@
 import { Footer } from './components/footer/Component';
 import styles from './app.module.scss';
-import { useState } from 'react';
 import { InformationSection } from './components/informationSection/Component';
-import { MapSection } from './mapSection/Component';
+import { MapSection } from './components/mapSection/Component';
 
 const {mainContainer} = styles;
 
