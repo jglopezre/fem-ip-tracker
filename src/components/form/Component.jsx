@@ -1,13 +1,12 @@
 import { useState } from 'react';
 import styles from './style.module.scss'
 
-const { formStyle, submitButton, inputField } = styles
+const { formStyle } = styles
 
-export const Form = ({sendData}) => {
+export const Form = ({sendData, isLoading}) => {
   const [value, setValue] = useState("");
 
   const handleValue = ({target}) => {
-    
     setValue(target.value);
   }
 
@@ -25,7 +24,7 @@ export const Form = ({sendData}) => {
         value={ value }
         onChange={ handleValue }
       />
-      <input type="submit" value="" />
+      <input type="submit" value="" disabled={ isLoading }/>
     </form>
   )
 }

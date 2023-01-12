@@ -1,14 +1,26 @@
 import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 
-export const MapSection = ({coordinate = [-38.005269, -57.541442]}) => {
+export const MapSection = ({ mapData }) => {
 
-  return (
-    <MapContainer center={[...coordinate]} zoom={13} scrollWheelZoom={false} >
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      <Marker position={[...coordinate]} />
-    </MapContainer>
-  )
+  const { fetchedData, isLoading } = mapData;
+
+  if(!isLoading) {
+    return (
+      <MapContainer center={[fetchedData.location.lat, fetchedData.location.lng]} zoom={13} scrollWheelZoom={false} style={{width: '100%'}}>
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <Marker position={[fetchedData.location.lat, fetchedData.location.lng]} />
+      </MapContainer>
+    )
+  } else {
+    return (
+      <div style={{ width: '100%' }}>
+        <h1>cargando mapa...</h1>
+      </div>
+    )
+  }
+
+  
 }

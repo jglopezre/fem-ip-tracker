@@ -32,5 +32,9 @@ $image: '../../assets/icon-arrow.svg';
     &:hover {
       background-color: colors.$color-primary-01;
     }
+
+    &:disabled {
+      background-color: lightgray;
+    }
   }
 }
